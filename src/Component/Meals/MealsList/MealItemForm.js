@@ -27,13 +27,14 @@ const MealItemForm = (props) =>{
     ref= {amountInputRef}
     label="Amount"
     input={{
-        id:'amount',
+        id: 'amount_' + props.id,
         type:'number',
         min:1,
         max:5,
         step:1,
         defaultValue:1
     }}
+    // since the input value which we receive is an object therefore we use double {{}}
     />
     <button>+ Add</button>
     {!AmountisValid && <p>Invalid Input, please enter the amount between 1 to 5</p>}

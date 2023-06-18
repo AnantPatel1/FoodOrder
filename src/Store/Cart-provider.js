@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-
+// here useReaducer is used instead of useState because of more complex logic of adding and subtracting items
 import CartContext from './cart-context';
 
 const defaultCartState = {
@@ -11,6 +11,7 @@ const cartReducer = (state, action) => {
   if (action.type === 'ADD') {
     const updatedTotalAmount =
       state.totalAmount + action.item.price * action.item.amount;
+      // state is the previous state snapshot while you return the new state
 
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.item.id
@@ -27,6 +28,7 @@ const cartReducer = (state, action) => {
       updatedItems[existingCartItemIndex] = updatedItem;
     } else {
       updatedItems = state.items.concat(action.item);
+      // concat is a built in method in array, but unlike push it return a new array, insted of just simply returning the previous one
     }
 
     return {

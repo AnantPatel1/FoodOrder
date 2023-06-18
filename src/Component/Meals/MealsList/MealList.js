@@ -18,8 +18,9 @@ const MealList= (props) => {
     });
   };
 
-    // the first $ is used to print while the next ${} is a syntax,
-    // .toFixed(2) means to give answer only till 2 decimal values
+    // the first $ is used to print while the next ${} is a syntax, the ${} is used to inject dynamic content into it
+    // the dynamic content injected here is price
+    // .toFixed(2) means to give answer only till 2 decimal values , it renders only till two decimal places
 
     return (
         <li className={classes.meal}>
